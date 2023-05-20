@@ -1,6 +1,6 @@
 package med.voll.api.controller;
 
-import jakarta.persistence.Table;
+import med.voll.api.paciente.DadosPacienteListagem;
 import med.voll.api.paciente.Paciente;
 import med.voll.api.paciente.PacienteDTO;
 import med.voll.api.paciente.PacienteRepository;

@@ -2,7 +2,6 @@ package med.voll.api.endereco;
 
 import jakarta.persistence.Embeddable;
 import lombok.AllArgsConstructor;
-import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -27,5 +26,29 @@ public class Endereco {
         this.complemento = endereco.complemento();
         this.cidade = endereco.cidade();
         this.uf = endereco.uf();
+    }
+
+    public void atualizaDado(Endereco novoEndereco) {
+        if (novoEndereco.getLogradouro().trim() != null) {
+            this.logradouro = novoEndereco.logradouro;
+        }
+        if (novoEndereco.getBairro().trim() != null) {
+            this.bairro = novoEndereco.bairro;
+        }
+        if (novoEndereco.getCep().trim() != null) {
+            this.cep = novoEndereco.cep;
+        }
+        if (novoEndereco.getNumero().trim() != null) {
+            this.numero = novoEndereco.numero;
+        }
+        if (novoEndereco.getComplemento().trim() != null) {
+            this.complemento = novoEndereco.complemento;
+        }
+        if (novoEndereco.getCidade().trim() != null) {
+            this.cidade = novoEndereco.cidade;
+        }
+        if (novoEndereco.getUf().trim() != null) {
+            this.uf = novoEndereco.uf;
+        }
     }
 }
