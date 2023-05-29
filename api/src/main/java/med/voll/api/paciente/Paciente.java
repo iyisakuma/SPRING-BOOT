@@ -23,6 +23,7 @@ public class Paciente implements Serializable {
     private String nome;
     private String cpf;
     private String email;
+    private boolean ativo = true;
     @Embedded
     private Endereco endereco;
 
@@ -32,5 +33,21 @@ public class Paciente implements Serializable {
         this.endereco = new Endereco(dadosPaciente.endereco());
         this.email = dadosPaciente.email();
         this.telefone = dadosPaciente.telefone();
+    }
+
+    public void atualizar(DadosPacienteUpdate novosDados) {
+        if(novosDados.nome() != null){
+            this.nome = novosDados.nome();
+        }
+        if(novosDados.telefone() != null){
+            this.telefone = novosDados.telefone();
+        }
+        if(novosDados.endereco() != null){
+            this.endereco.atualizaDado(novosDados.endereco());
+        }
+    }
+
+    public void inativa() {
+        this.ativo = false;
     }
 }
